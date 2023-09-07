@@ -1,4 +1,4 @@
-export const movies = [
+const movies = [
   {
     id: 1,
     Title: 'Silence of the Lambs',
@@ -89,3 +89,5 @@ export const movies = [
     Director: 'Quentin Tarantino',
   },
 ];
+
+export default movies;
