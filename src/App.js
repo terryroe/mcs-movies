@@ -6,8 +6,12 @@ function App() {
   return (
     <Fragment>
       <div className="container">
-        <h1 className="row justify-content-center my-4">MCS Movies</h1>
-        <MovieList />
+        <div className="row">
+          <h1 className="text-center my-4">MCS Movies</h1>
+        </div>
+        <div className="row row-gap-4">
+          <MovieList />
+        </div>
       </div>
     </Fragment>
   );

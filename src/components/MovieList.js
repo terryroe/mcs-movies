@@ -6,7 +6,9 @@ const MovieList = () => {
   return (
     <Fragment>
       {movies.map((movie) => (
-        <Movie movie={movie} />
+        <div className="col-3">
+          <Movie movie={movie} />
+        </div>
       ))}
     </Fragment>
   );
