@@ -1,4 +1,5 @@
 import MovieList from './components/MovieList';
+import movies from './data/movies';
 import './App.css';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
           <h1 className="text-center my-4">MCS Movies</h1>
         </div>
         <div className="row row-gap-4">
-          <MovieList />
+          <MovieList movies={movies} />
         </div>
       </div>
     </>

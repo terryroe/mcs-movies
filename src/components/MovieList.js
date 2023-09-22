@@ -1,11 +1,10 @@
-import movies from '../data/movies';
 import Movie from './Movie';
 
-const MovieList = () => {
+const MovieList = ({ movies }) => {
   return (
     <>
       {movies.map((movie) => (
-        <div className="col-3">
+        <div className="col-md-6">
           <Movie movie={movie} />
         </div>
       ))}
