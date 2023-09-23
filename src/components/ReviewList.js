@@ -1,19 +1,28 @@
 import ReviewForm from './ReviewForm';
 
-const ReviewList = ({ reviews }) => {
+const ReviewList = ({ reviews, addReview }) => {
   return (
     <>
-      <ReviewForm reviews={reviews} />
+      <ReviewForm addReview={addReview} />
       <hr />
-      <div>Reviews</div>
+      <strong>Reviews</strong>
       <hr />
-      {reviews.map((review) => {
-        return (
-          <>
-            <div>Review</div>
-          </>
-        );
-      })}
+      {reviews.length > 0 ? (
+        reviews.map((review) => {
+          return (
+            <div key={review.id}>
+              <div>{review.rating} stars</div>
+              <div>{review.review}</div>
+              <hr />
+            </div>
+          );
+        })
+      ) : (
+        <>
+          <div>No Reviews Yet</div>
+          <hr />
+        </>
+      )}
     </>
   );
 };

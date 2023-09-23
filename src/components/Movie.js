@@ -1,13 +1,24 @@
 import { useEffect, useState } from 'react';
 import ReviewList from './ReviewList';
+import reviewData from '../data/reviewData';
+
+let nextId = 1000;
 
 const Movie = ({ movie }) => {
   const [reviews, setReviews] = useState([]);
   const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
-    setReviews([]);
-  }, []);
+    setReviews(reviewData.filter((review) => movie.id === review.movieId));
+  }, [movie.id]);
+
+  const addReview = (reviewData) => {
+    const review = {
+      id: nextId++,
+      ...reviewData,
+    };
+    setReviews(reviews.concat(review));
+  };
 
   return (
     <>
@@ -40,10 +51,10 @@ const Movie = ({ movie }) => {
             </>
           ) : (
             <>
-              <ReviewList reviews={reviews} />
+              <ReviewList reviews={reviews} addReview={addReview} />
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-secondary"
                 onClick={() => setShowReviews(false)}
               >
                 Hide Reviews
