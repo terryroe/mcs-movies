@@ -11,7 +11,7 @@ const ReviewList = ({ reviews, addReview }) => {
         reviews.map((review) => {
           return (
             <div key={review.id}>
-              <div>{review.rating} stars</div>
+              <div>{Array(review.rating).fill(' * ')}</div>
               <div>{review.review}</div>
               <hr />
             </div>
