@@ -1,3 +1,5 @@
+// Standard App component that imports data and passes it to the main MovieList
+// component.
 import MovieList from './components/MovieList';
 import movieData from './data/movieData';
 import './App.css';

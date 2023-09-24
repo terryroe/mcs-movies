@@ -1,3 +1,4 @@
+// Map over all the movies returning a Movie component for each.
 import Movie from './Movie';
 
 const MovieList = ({ movies }) => {
